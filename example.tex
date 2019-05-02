@@ -1,45 +1,74 @@
 % !Mode:: "TeX:UTF-8"
 %!TEX program  = xelatex
 
-\documentclass{cumcmthesis}
-%\documentclass[withoutpreface,bwprint]{cumcmthesis} %去掉封面与编号页
+\documentclass[withoutsupervisor, withoutprenumber, footernumber]{anymcmthesis} 
+
+% \documentclass[withoutpreface]{anymcmthesis} %没有承诺书
+% \documentclass[withoutprenumber]{anymcmthesis} %无编号页面
+% \documentclass[withoutsupervisor]{anymcmthesis} %无指导老师
+% \documentclass[headernumber]{anymcmthesis} %上方评阅编号
+% \documentclass[footernumber]{anymcmthesis} %下方评阅编号
 
 \usepackage{url}
-\title{全国大学生数学建模竞赛编写的 \LaTeX{} 模板}
-\tihao{A}
+\usepackage{float} %使用[H]
+
+\competition{南京理工大学大学生数学建模竞赛}
+\problems{A/B}
+
+
+\title{一次神奇的建模}
+\problemchosed{A}
 \baominghao{4321}
-\schoolname{XX大学}
-\membera{小米}
-\memberb{向左}
-\memberc{哈哈}
-\supervisor{老师}
-\yearinput{2017}
-\monthinput{08}
-\dayinput{22}
+\schoolname{理学院}
+\membera{刘梓恒}
+\memberb{刘子恒}
+\memberc{刘紫恒}
+\supervisor{吉米多维奇}
+\yearinput{2019}\monthinput{4}\dayinput{32}
 
 \begin{document}
 
  \maketitle
  \begin{abstract}
-cumcmthesis 是为全国大学生数学建模竞赛编写的\LaTeX{}模板, 旨在让大家专注于 论文的内容写作, 而不用花费过多精力在格式的定制和调整上. 本手册是相应的参考, 其 中提供了一些环境和命令可以让模板的使用更为方便. 同时需要注意, 使用者需要有一 定的 \LaTeX{} 的使用经验, 至少要会使用常用宏包的一些功能, 比如参考文献，数学公式，图片使用，列表环境等等. 例子文件参看 example.pdf.
+anymcmthesis 由 \LaTeX{} Studio 提供的 cumcmthesis 修改而来，可以自定义更多的元素，满足一些奇怪的建模需求\\
+\indent 该 example.tex 即文档，可参照修改。\\
+\indent 如果遇到了bug请提交issus，如果需要修改承诺书内容，请修改 anymcmthesis.cls 中的常量。字体文件请保留在当前目录下，否则将引起编译错误。
 
-另外, 欢迎大家购买我们是视频教程，点击\href{https://item.taobao.com/item.htm?spm=a1z10.1-c.w4004-3473795048.4.ThFQCG&id=43823508044}{\fbox{这里}}。
-
-欢迎大家到QQ群里沟通交流：91940767.
-
-\uwave{关注我们的微信公众号}：
-
-\centerline{\includegraphics[width=5cm]{gongzhonghao}}
+%\centerline{\includegraphics[width=5cm]{gongzhonghao}}
 
 \keywords{折叠桌\quad  曲线拟合\quad   非线性优化模型\quad  受力分析}
 \end{abstract}
 
 %目录
 \tableofcontents
-
+\newpage
 \section{问题重述}
 
 创意平板折叠桌注重于表达木制品的优雅和设计师所想要强调的自动化与功能性。为了增大有效使用面积。设计师以长方形木板的宽为直径截取了一个圆形作为桌面，又将木板剩余的面积切割成了若干个长短不一的木条，每根木条的长度为平板宽到圆上一点的距离，分别用两根钢筋贯穿两侧的木条，使用者只需提起木板的两侧，便可以在重力的作用下达到自动升起的效果，相互对称的木条宛如下垂的桌布，精密的制作工艺配以质朴的木材，让这件工艺品看起来就像是工业革命时期的机器。
+
+\begin{figure}[H]
+	\centering
+	\subfigure[Container 1 Configuation]{
+		\begin{minipage}[t]{0.3\linewidth}
+			\centering
+			\includegraphics[width=1.2in]{figure/c_config_1.jpg}
+		\end{minipage}
+	}
+	\subfigure[Container 2 Configuation]{
+		\begin{minipage}[t]{0.3\linewidth}
+			\centering
+			\includegraphics[width=1.2in]{figure/c_config_2.jpg}
+		\end{minipage}
+	}
+	\subfigure[Container 3 Configuation]{
+		\begin{minipage}[t]{0.3\linewidth}
+			\centering
+			\includegraphics[width=1.2in]{figure/c_config_3.jpg}
+		\end{minipage}
+	}
+	\centering\includegraphics[width=3.0in]{figure/c_config_legend.png}
+	\centering\caption{ISO container loading configuration}
+\end{figure}
 
 \subsection{问题的提出}
 
@@ -83,7 +112,7 @@ cumcmthesis 是为全国大学生数学建模竞赛编写的\LaTeX{}模板, 旨�
 问题流程图：
 \begin{figure}[!h]
 \centering
-\includegraphics[width=.6\textwidth]{1.png}
+%\includegraphics[width=.6\textwidth]{1.png}
 \caption{问题三流程图}
 \end{figure}
 
